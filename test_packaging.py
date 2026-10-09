@@ -37,7 +37,7 @@ class Packaging(unittest.TestCase):
     def test_marker(self):
         self.assertIn("# pi-app-store: 1", (ROOT/"app-store.sh").read_text().splitlines()[:5])
     def test_version(self):
-        self.assertEqual(json.loads((ROOT/"app-version.json").read_text())["version"], "1.0.0")
+        self.assertEqual(json.loads((ROOT/"app-version.json").read_text())["version"], "1.0.1")
     def test_safe_install(self):
         self.assertEqual(subprocess.run(["bash", "app-store.sh", "install"], cwd=ROOT, capture_output=True).returncode, 0)
     def test_entry(self):
